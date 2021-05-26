@@ -13,10 +13,10 @@ from nltk import word_tokenize
 from scipy.stats import pearsonr
 from sklearn.metrics import accuracy_score, f1_score, roc_auc_score
 
-from deeppavlov.dataset_readers.paraphraser_reader import ParaphraserReader
-from deeppavlov.dataset_readers.basic_classification_reader import BasicClassificationDatasetReader
+# from deeppavlov.dataset_readers.paraphraser_reader import ParaphraserReader
+# from deeppavlov.dataset_readers.basic_classification_reader import BasicClassificationDatasetReader
 
-from deepPavlovEval.datautils import STSReader, XNLIReader
+from deepPavlovEval.datautils import STSReader, XNLIReader, ParaphraserReader, BasicClassificationDatasetReader
 from deepPavlovEval.utils import evaluate_embedder_pairwise, evaluate_embedder_clf, evaluate_embedder_nli
 
 
@@ -56,8 +56,7 @@ class Evaluator:
     def _load_datasets(datasets_root, tasks):
         task2data = {}
         if 'paraphraser' in tasks:
-            task2data['paraphraser'] = ParaphraserReader().read(
-                datasets_root / 'Paraphraser')
+            task2data['paraphraser'] = ParaphraserReader().read( datasets_root / 'Paraphraser')
 
         if 'msrvid' in tasks:
             task2data['msrvid'] = STSReader().read(

@@ -11,6 +11,8 @@ wget http://files.deeppavlov.ai/datasets/STS2012_MSRvid_translated.tar.gz
 tar zxvf STS2012_MSRvid_translated.tar.gz && rm -f rm -f STS2012_MSRvid_translated.tar.gz
 
 echo 'XNLI'
+# https://github.com/facebookresearch/XNLI
+# https://dl.fbaipublicfiles.com/XNLI/XNLI-1.0.zip
 wget http://www.nyu.edu/projects/bowman/xnli/XNLI-1.0.zip
 unzip XNLI-1.0.zip && rm -f XNLI-1.0.zip
 rm -rf __MACOSX
